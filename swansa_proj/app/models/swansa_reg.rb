@@ -1,0 +1,2 @@
+class SwansaReg < ApplicationRecord
+end
