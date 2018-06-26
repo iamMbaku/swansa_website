@@ -1,0 +1,57 @@
+<%= form_with(model: request_room, local: true) do |form| %>
+  <% if request_room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(request_room.errors.count, "error") %> prohibited this request_room from being saved:</h2>
+
+      <ul>
+      <% request_room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :house_adress %>
+    <%= form.text_area :house_adress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_house_details %>
+    <%= form.text_area :other_house_details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :house_image %>
+    <%= form.text_field :house_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_availability %>
+    <%= form.text_field :room_availability %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_people_in_Room %>
+    <%= form.number_field :number_people_in_Room %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_cost %>
+    <%= form.text_field :room_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_room_details %>
+    <%= form.text_area :other_room_details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_image %>
+    <%= form.text_field :room_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

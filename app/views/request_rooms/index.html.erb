@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Request Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>House adress</th>
+      <th>Other house details</th>
+      <th>House image</th>
+      <th>Room availability</th>
+      <th>Number people in room</th>
+      <th>Room cost</th>
+      <th>Other room details</th>
+      <th>Room image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @request_rooms.each do |request_room| %>
+      <tr>
+        <td><%= request_room.house_adress %></td>
+        <td><%= request_room.other_house_details %></td>
+        <td><%= request_room.house_image %></td>
+        <td><%= request_room.room_availability %></td>
+        <td><%= request_room.number_people_in_Room %></td>
+        <td><%= request_room.room_cost %></td>
+        <td><%= request_room.other_room_details %></td>
+        <td><%= request_room.room_image %></td>
+        <td><%= link_to 'Show', request_room %></td>
+        <td><%= link_to 'Edit', edit_request_room_path(request_room) %></td>
+        <td><%= link_to 'Destroy', request_room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Request Room', new_request_room_path %>
