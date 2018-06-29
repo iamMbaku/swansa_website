@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_26_022428) do
+ActiveRecord::Schema.define(version: 2018_06_28_103606) do
 
-  create_table "request_rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "house_adress"
     t.text "other_house_details"
-    t.binary "house_image"
     t.string "room_availability"
     t.integer "number_people_in_Room"
-    t.decimal "room_cost", precision: 10
+    t.integer "room_cost"
     t.text "other_room_details"
-    t.binary "room_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

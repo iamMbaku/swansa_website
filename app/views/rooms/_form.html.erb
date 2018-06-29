@@ -1,0 +1,52 @@
+<%= form_with model: @room, local: true, html: { multipart: true } do |form| %>
+  <% if room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+ <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :house_adress %>
+    <%= form.text_area :house_adress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_house_details %>
+    <%= form.text_area :other_house_details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_availability %>
+    <%= form.text_field :room_availability %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_people_in_Room %>
+    <%= form.number_field :number_people_in_Room %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_cost %>
+    <%= form.number_field :room_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_room_details %>
+    <%= form.text_area :other_room_details %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

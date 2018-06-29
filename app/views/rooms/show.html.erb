@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= image_tag @room.image.url(:medium) %>
+
+<p>
+  <strong>House adress:</strong>
+  <%= @room.house_adress %>
+</p>
+
+<p>
+  <strong>Other house details:</strong>
+  <%= @room.other_house_details %>
+</p>
+
+<p>
+  <strong>Room availability:</strong>
+  <%= @room.room_availability %>
+</p>
+
+<p>
+  <strong>Number people in room:</strong>
+  <%= @room.number_people_in_Room %>
+</p>
+
+<p>
+  <strong>Room cost:</strong>
+  <%= @room.room_cost %>
+</p>
+
+<p>
+  <strong>Other room details:</strong>
+  <%= @room.other_room_details %>
+</p>
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>
